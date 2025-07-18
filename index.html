@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route Thala - YouTube Channel</title>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #facc15;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .full-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+      }
+      #home > *:not(img.full-bg-img) {
+        position: relative;
+        z-index: inherit;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center bg-gray-900 px-6 py-4">
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain rounded-full border-2 border-yellow-400 shadow-lg" />
+        <h1 class="text-xl font-bold">Route Thala</h1>
+      </div>
+      <div class="space-x-6">
+        <a href="#home" class="nav-link hover:text-yellow-400">Home</a>
+        <a href="#channel" class="nav-link hover:text-yellow-400">Channel View</a>
+        <a href="#about" class="nav-link hover:text-yellow-400">About</a>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="relative flex flex-col items-center justify-center text-center py-16 bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1549921296-3a6b4b4fd0a2?auto=format&fit=crop&w=1350&q=80');">
+      <!-- Full transparent music image background -->
+      <img src="Violin Wallpaper.jpg" alt="Music Notes Background" class="full-bg-img" />
+
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Welcome to Route Thala</h2>
+      <p class="mb-4 max-w-xl px-4">Join the Route and never miss the fun!</p>
+
+      <button class="bg-red-600 px-4 py-2 rounded-full text-white font-semibold  animate-bounce mb-4 ">
+        🔔 Subscribe Now!
+      </button>
+
+      <div class="g-ytsubscribe" data-channelid="UCvpmmBCI-UROHu2ZR7Hb63Q" data-layout="default" data-count="default" data-onytevent="handleSubscribe"></div>
+
+      <p class="mt-4 text-yellow-300">Click the button above to join our YouTube family 🚀</p>
+    </section>
+
+    <!-- Channel View Section -->
+    <section id="channel" class="py-16 px-6 text-center bg-gray-800">
+      <h2 class="text-3xl font-semibold mb-6">Channel View</h2>
+      <p class="mb-6">Watch our latest content directly on YouTube!</p>
+      <a href="https://www.youtube.com/@routethala_1" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">Visit Channel</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-gray-900 text-center">
+      <h2 class="text-3xl font-semibold mb-6">About</h2>
+      <p class="max-w-2xl mx-auto">Route Thala is a creative platform for expressing thoughts, sharing experiences, and entertaining the world. We believe in originality and connection through storytelling. Join our ride!</p>
+    </section>
+
+    <script>
+      function handleSubscribe(event) {
+        alert('Thanks for subscribing to Route Thala! 🔥');
+      }
+    </script>
+  </body>
+</html>
